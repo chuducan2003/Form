@@ -33,6 +33,7 @@ main {
 
 /* Container */
 .container {
+    display: flex;
     width: 870px;
     margin: 60px auto 0;
     padding: 6px;
@@ -139,4 +140,55 @@ main {
     height: 250px;
     opacity: 1;
     background: var(--secondary-color);
+}
+
+.contact-form {
+    margin: 28px 32px;
+    flex-grow: 1;
+}
+
+.form-row {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    flex-grow: 1;
+}
+
+.form-group:focus-within .form-label {
+    color: #5f42b6;
+}
+
+.form-group:focus-within .form-input {
+    border-color: #5f42b6;
+}
+
+.form-label,
+.form-input {
+    display: block;
+}
+
+.form-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #131434;
+}
+
+.form-input {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #e3e3e9;
+    padding: 8px 0 14px 0;
+    color: #0d0d3b;
+}
+
+.form-input::placeholder {
+    color: #bebfc9;
+}
+
+.form-error {
+    display: none;
 }
