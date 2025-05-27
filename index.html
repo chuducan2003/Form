@@ -73,7 +73,11 @@
 
                 <!-- Contact form -->
                 <div class="contact-form">
-                    <form action="" autocomplete="off">
+                    <form
+                        method="POST"
+                        action="https://api-gateway.fullstack.edu.vn/action_page.php"
+                        autocomplete="off"
+                    >
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="first-name" class="form-label"
@@ -83,11 +87,12 @@
                                     type="text"
                                     id="first-name"
                                     class="form-input"
+                                    name="first-name"
                                     placeholder="Enter first name"
+                                    required
+                                    minlength="2"
                                 />
-                                <p class="form-error">
-                                    Vui lòng nhập trường này
-                                </p>
+                                <p class="form-error">Nhập ít nhất 2 ký tự</p>
                             </div>
 
                             <div class="form-group">
@@ -98,11 +103,12 @@
                                     type="text"
                                     id="last-name"
                                     class="form-input"
+                                    name="last-name"
                                     placeholder="Enter last name"
+                                    required
+                                    minlength="2"
                                 />
-                                <p class="form-error">
-                                    Vui lòng nhập trường này
-                                </p>
+                                <p class="form-error">Nhập ít nhất 2 ký tự</p>
                             </div>
                         </div>
 
@@ -115,11 +121,13 @@
                                     type="email"
                                     id="email"
                                     class="form-input"
+                                    name="email"
                                     placeholder="Enter email"
-                                    value="hello@gmail.com"
+                                    required
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                                 />
                                 <p class="form-error">
-                                    Vui lòng nhập trường này
+                                    Nhập đúng định dạng email
                                 </p>
                             </div>
 
@@ -131,10 +139,13 @@
                                     type="tel"
                                     id="phone"
                                     class="form-input"
+                                    name="phone"
                                     placeholder="Enter phone"
+                                    required
+                                    pattern="^(0|\+?84)(3|5|7|8|9)[0-9]{8}$"
                                 />
                                 <p class="form-error">
-                                    Vui lòng nhập trường này
+                                    Nhập đúng số điện thoại
                                 </p>
                             </div>
                         </div>
@@ -152,6 +163,7 @@
                                             name="type"
                                             id="web-design"
                                             checked
+                                            value="web-design"
                                         />
                                         <label for="web-design"
                                             >Web Design</label
@@ -163,6 +175,7 @@
                                             type="radio"
                                             name="type"
                                             id="web-development"
+                                            value="web-development"
                                         />
                                         <label for="web-development"
                                             >Web Development</label
@@ -174,6 +187,7 @@
                                             type="radio"
                                             name="type"
                                             id="logo-design"
+                                            value="logo-design"
                                         />
                                         <label for="logo-design"
                                             >Logo Design</label
@@ -185,14 +199,11 @@
                                             type="radio"
                                             name="type"
                                             id="other"
+                                            value="other"
                                         />
                                         <label for="other">Other</label>
                                     </div>
                                 </div>
-
-                                <p class="form-error">
-                                    Vui lòng chọn trường này
-                                </p>
                             </div>
                         </div>
 
@@ -207,7 +218,10 @@
                                     name="message"
                                     placeholder="Write your message..."
                                     oninput="onResize(this)"
+                                    required
+                                    minlength="10"
                                 ></textarea>
+                                <p class="form-error">Nhập ít nhất 10 ký tự</p>
                             </div>
                         </div>
 
